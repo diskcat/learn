@@ -21,7 +21,7 @@ ldd ./xxx
 
 非root用户
 cp xx.so ~/lib
-export LD_LIBRARY_PATH=~/lib //声明一个环境变量，限当前终端
+export LD_LIBRARY_PATH=~/lib //声明一个环境变量，限当前终端。
 
 ### 静态链接库
 静态库在比编译的时候把库直接装载进来，在调用的时候不占用调用时间。 
@@ -33,7 +33,7 @@ ar -cr libxx.a yyy.o
 
 发布到
 /usr/local/include --.h
-/usr/local/lib     --当前二进制文件的形式
+/usr/local/lib     --当前二进制文件的形式 .a
 
 gcc -L/usr/local/lib -o main.o -lxx
 -l 链接选项，放在最后

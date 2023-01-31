@@ -42,5 +42,16 @@
     telldir(3): 
 ### 二、系统数据文件和信息
 
-
+1. etc/passwd
+    getpwuid(2)
+    getpwnam(2)
+2. etc/group
+    getgrnam(2)
+    getgrgid(2)
+3. etc/shadow
+    getspnam
+    crypt： 只能看到第3个$前面的数据信息
+    getpass
+4. 时间戳
+5.
 ### 二、进程环境
