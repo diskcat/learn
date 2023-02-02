@@ -53,5 +53,61 @@
     crypt： 只能看到第3个$前面的数据信息
     getpass
 4. 时间戳
-5.
+    time(2)
+
+           gmtime                    strftime 
+    time_t ------------> struct tm  ---------> char *  
+           <------------
+           mktime  
+
+           localtime                 strftime
+    time_t ------------> struct tm  ---------> char *  
+           <------------
+           mktime 
 ### 二、进程环境
+1. main函数
+    main的return是返回给父进程看的。
+2. 进程终止
+    1.1 正常终止
+        从main函数返回。
+        调用exit。
+        调用_exit或_EXIT。
+        最后一个线程从启动线程返回。
+        最后一个线程调用phread_exit。
+    
+    1.2 异常终止
+        调用abort。
+        接到一个信号并终止。
+        最后一个线程对其取消请求作出响应。
+    atexit：钩子函数
+
+3. 命令行参数的分析
+    getopt
+    getopt_long
+
+    第一个-来读其他参数
+    source -mydate.c
+
+4. 环境变量
+    KEY = VALUE
+    export
+    getenv
+    setenv
+    putenv  
+5. C程序存储空间的布局
+    ps axf
+    pmap id //查看内存分布
+6. 库
+    动态库
+    静态库
+    手工装载库
+    dlopen
+    dlclose
+    dlerror
+    dlsym
+7. 函数的跳转
+    setjmp
+    longjmp
+8. 资源获取和调用
+    getrlimit
+    setrlimit
